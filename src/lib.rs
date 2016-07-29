@@ -1,5 +1,3 @@
-#![allow(dead_code)] // for now; remove later when we start using the module.
-
 /// Simulation engine for conway's game of life.
 ///
 /// 1. Any live cell with fewer than two live neighbours dies, as if caused by under-population.
@@ -34,7 +32,7 @@ impl Engine {
         }
     }
 
-    /// Advance the engine by one tick. The game state will be updated according to the following rules:
+    /// Advance the engine by one tick.
     pub fn tick(&mut self) {
         let next = vec![State::Dead; self.cells.len()];
 

@@ -1,6 +1,8 @@
 extern crate cgol;
 
 use cgol::{Engine, State};
+use std::time::Duration;
+use std::thread::sleep;
 
 fn main() {
     let mut engine = Engine::new(10, 5);
@@ -14,8 +16,11 @@ fn main() {
     }
     println!("---------------------");
     println!("{}", engine);
-    engine.tick();
     println!("---------------------");
-    println!("{}", engine);
-    println!("---------------------");
+    loop {
+        sleep(Duration::from_secs(1));
+        engine.tick();
+        println!("{}", engine);
+        println!("---------------------");
+    }
 }
