@@ -8,6 +8,30 @@
 use std::ops::IndexMut;
 use std::fmt;
 
+pub struct CellIterator {
+    x: usize,
+    y: usize,
+    engine: Engine,
+}
+
+impl Iterator for CellIterator {
+    type Item = (usize, usize, State);
+    fn next(&mut self) -> Option<(usize, usize, State)> {
+        let x = self.x;
+        let y = self.y;
+        self.x += 1;
+        if self.x >= self.engine.width {
+            self.x = 0;
+            self.y += 1;
+        }
+        if x * y < self.engine.width() * self.engine.height() {
+            Some((x, y, self.engine.get(x, y)))
+        } else {
+            None
+        }
+    }
+}
+
 /// The state of a cell. It can either be Dead or Alive.
 #[derive(Clone, Copy, Debug)]
 pub enum State {
