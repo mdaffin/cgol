@@ -5,22 +5,17 @@ use std::time::Duration;
 use std::thread::sleep;
 
 fn main() {
-    let mut engine = Engine::new(10, 5);
-    for y in 0..5 {
-        engine.set(0, y, State::Alive);
-        engine.set(9, y, State::Alive);
-    }
-    for x in 0..10 {
-        engine.set(x, 0, State::Alive);
-        engine.set(x, 4, State::Alive);
-    }
-    println!("---------------------");
+    let mut engine = Engine::random(150, 10);
+    engine.set(1, 0, State::Alive);
+    engine.set(2, 1, State::Alive);
+    engine.set(0, 2, State::Alive);
+    engine.set(1, 2, State::Alive);
+    engine.set(2, 2, State::Alive);
+
     println!("{}", engine);
-    println!("---------------------");
     loop {
-        sleep(Duration::from_secs(1));
+        sleep(Duration::from_millis(100));
         engine.tick();
         println!("{}", engine);
-        println!("---------------------");
     }
 }
