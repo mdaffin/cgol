@@ -5,7 +5,7 @@ use std::time::Duration;
 use std::thread::sleep;
 
 fn main() {
-    let mut engine = Engine::new(10, 10);
+    let mut engine = Engine::new(80, 40);
     engine.randomise();
     println!("{}", engine);
     loop {

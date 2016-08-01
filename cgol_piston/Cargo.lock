@@ -2,18 +2,15 @@
 name = "gameoflife"
 version = "0.1.0"
 dependencies = [
- "camera_controllers 0.16.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "cgol 0.1.0",
  "find_folder 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "gfx 0.12.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "gfx_device_gl 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "image 0.10.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "piston-ai_behavior 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "piston2d-drag_controller 0.14.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "piston2d-sprite 0.27.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "piston_window 0.50.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "pistoncore-sdl2_window 0.33.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "rand 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
- "shader_version 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "vecmath 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -57,24 +54,19 @@ version = "0.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
-name = "camera_controllers"
-version = "0.16.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "bitflags 0.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "piston3d-cam 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "pistoncore-input 0.13.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "quaternion 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "vecmath 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "cgl"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "gleam 0.2.20 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.14 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "cgol"
+version = "0.1.0"
+dependencies = [
+ "rand 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -561,15 +553,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "piston-ai_behavior"
-version = "0.15.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "pistoncore-input 0.13.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "rustc-serialize 0.3.19 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
 name = "piston-float"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -634,27 +617,6 @@ dependencies = [
  "piston-texture 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "piston-viewport 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "read_color 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "vecmath 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "piston2d-sprite"
-version = "0.27.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "interpolation 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "piston-ai_behavior 0.15.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "piston2d-graphics 0.16.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "pistoncore-input 0.13.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "uuid 0.1.18 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "piston3d-cam"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "quaternion 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "vecmath 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -738,14 +700,6 @@ dependencies = [
  "inflate 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "num-iter 0.1.32 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "quaternion"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "vecmath 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -904,15 +858,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "winapi 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)",
  "winapi-build 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "uuid"
-version = "0.1.18"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "rand 0.3.14 (registry+https://github.com/rust-lang/crates.io-index)",
- "rustc-serialize 0.3.19 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
