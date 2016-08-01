@@ -36,18 +36,13 @@ impl Engine {
         }
     }
 
-    pub fn random(width: usize, height: usize) -> Engine {
-        let mut cells = vec![State::Dead; width * height];
-        for cell in cells.iter_mut() {
+    /// Randomises the state of all the cells.
+    pub fn randomise(&mut self) {
+        for cell in self.cells.iter_mut() {
             *cell = match rand::random::<bool>() {
                 true => State::Alive,
                 false => State::Dead,
-            };
-        }
-        Engine {
-            cells: cells,
-            width: width,
-            height: height,
+            }
         }
     }
 
@@ -84,7 +79,7 @@ impl Engine {
     /// Set the state of the cell at (x, y) to v.
     pub fn set(&mut self, x: usize, y: usize, v: State) {
         let i = self.to_index(x, y);
-        self.cells[i] = v
+        self.cells[i] = v;
     }
 
     /// Get a mutable reference to the state of the cell at (x, y).
