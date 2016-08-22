@@ -40,6 +40,7 @@ impl Engine {
 
     /// Randomises the state of all the cells.
     pub fn randomise(&mut self) {
+        self.iteration = 0;
         for cell in self.cells.iter_mut() {
             *cell = match rand::random::<bool>() {
                 true => State::Alive,
