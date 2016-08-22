@@ -22,6 +22,7 @@ pub enum State {
 /// The core engine holding the state of all the cells.
 pub struct Engine {
     cells: Vec<State>,
+    iteration: u32,
     width: usize,
     height: usize,
 }
@@ -31,6 +32,7 @@ impl Engine {
     pub fn new(width: usize, height: usize) -> Engine {
         Engine {
             cells: vec![State::Dead; width * height],
+            iteration: 0,
             width: width,
             height: height,
         }
@@ -58,7 +60,13 @@ impl Engine {
                 _ => unreachable!(),
             }
         }
+        self.iteration += 1;
         self.cells = next
+    }
+
+    /// Get the number of iterations that the engine has undergone.
+    pub fn iterations(&self) -> u32 {
+        self.iteration
     }
 
     /// Gets the width of the world grid.
